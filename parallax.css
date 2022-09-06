@@ -14,44 +14,44 @@
 }
 
 .second {
-  width:100%;
+  width:80%;
 }
 
 .first {
-  width:100%;
+  width:80%;
 }
 
 .third {
-  width:100%;
+  width:80%;
 }
 
-.fourth {
-  width:100%;
+/*.fourth {
+  width:80%;
 }
 
 .fifth {
-  width:100%;
-}
+  width:80%;
+}*/
 
-.parallax__layer--fronter {
+.parallax__layer__back {
   transform: translateZ(-4px)scale(3);
 }
 
-.parallax__layer--front {
+.parallax__layer__front {
   transform: translateZ(-3px) scale(3);
 }
 
-.parallax__layer--base {
-  transform: translateZ(-2px)scale(2);
+.parallax__layer__base {
+  transform: translateZ(-1px)scale(2);
 }
 
-.parallax__layer--deep {
+/*.parallax__layer--deep {
   transform: translateZ(-4px) scale(6);
 }
 
 .parallax__layer--back {
   transform: translateZ(0)scale(1);
-}
+}*/
 
 /*.parallax__group {
   position: relative;

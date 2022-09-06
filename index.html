@@ -2,27 +2,55 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="parallax.css">
+    <!-- <link rel="stylesheet" type="text/css" href="parallax.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://s.electerious.com/basicScroll/dist/basicScroll.min.js">
+    </script>
     <title>parallax</title>
 </head>
 
 <body>
     <div class="parallax">
         <div class="parallax__group">
-            <div class="parallax__layer parallax__layer--back">
-                <img class="first" src="1wave.png">
-            </div>
-            <div class="parallax__layer parallax__layer--base">
-                <img class="third" src="3wave.png">
-            </div>
-            <div class="parallax__layer parallax__layer--front">
-                <img class="fourth" src="5wave.png">
-            </div>
-            <div class="parallax__layer parallax__layer--deep">
-                <img class="fifth" src="4wave.png">
-            </div>
+            <img class="scene" style="margin-top: 50px;" data-modifier="80" src="wave1.png">
+            <img class="scene" style="margin-top: 50px;" data-modifier="70" src="wave3.png">
+            <img class="scene" style="margin-top: 70px;" data-modifier="60" src="wave2.png">
         </div>
     </div>
 </body>
+<style>
+body {
+    height: 50vh;
+    background: transparent;
+}
+
+.scene {
+    position: absolute;
+    width: 100%;
+    transform: translateY(var(--translateY));
+    will-change: transform;
+    overflow: hidden;
+}
+</style>
+<script>
+document.querySelectorAll('.scene').forEach((elem) => {
+
+    const modifier = elem.getAttribute('data-modifier')
+
+    basicScroll.create({
+        elem: elem,
+        from: 0,
+        to: 500,
+        direct: true,
+        props: {
+            '--translateY': {
+                from: '0',
+                to: `${ 5 * modifier }px`
+            }
+        }
+    }).start()
+
+})
+</script>
 
 </html>
